@@ -19,12 +19,12 @@ export const { addContact, deleteContact } = contactsSlice.actions;
 
 export const contactsReducer = contactsSlice.reducer;
 
-const persistConfig = {
-  key: 'root',
-  storage,
-};
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// };
 
-export const persistedContactsReducer = persistReducer(
-  persistConfig,
-  contactsReducer
-);
+// export const persistedContactsReducer = persistReducer(
+//   persistConfig,
+//   contactsReducer
+// );

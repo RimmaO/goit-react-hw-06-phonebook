@@ -1,4 +1,4 @@
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 
 import Section from './Section/Section';
 import ContactForm from './ContactForm/ContactForm';
@@ -34,16 +34,6 @@ export default function App() {
 
   // const handleChangeFilter = event => {
   //   setFilter(event.target.value);
-  // };
-
-  // const getFilterContacts = () => {
-  //   return contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(filter.toLowerCase())
-  //   );
-  // };
-
-  // const deleteContact = contactId => {
-  //   setContacts(contacts.filter(contact => contact.id !== contactId));
   // };
 
   return (
