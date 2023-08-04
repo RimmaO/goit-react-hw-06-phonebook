@@ -4,12 +4,14 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const filterSlice = createSlice({
   name: 'filter',
-  initialState: '',
+  initialState: {
+    value: '',
+  },
   reducers: {
     filterContact(state, action) {
       // console.log(filterContact(state));
       // console.log(filterContact(action));
-      return (state = action.payload);
+      return (state.value = action.payload);
     },
   },
 });
@@ -17,13 +19,3 @@ export const filterSlice = createSlice({
 export const { filterContact } = filterSlice.actions;
 
 export const filterReducer = filterSlice.reducer;
-
-// const persistConfig = {
-//   key: 'root',
-//   storage,
-// };
-
-// export const persistedFilterReducer = persistReducer(
-//   persistConfig,
-//   filterReducer
-// );
