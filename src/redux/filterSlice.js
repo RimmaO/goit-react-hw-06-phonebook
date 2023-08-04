@@ -1,17 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { persistReducer } from 'reduxjs-toolkit-persist';
-// import storage from 'reduxjs-toolkit-persist/lib/storage';
 
 export const filterSlice = createSlice({
   name: 'filter',
-  initialState: {
-    value: '',
-  },
+  initialState: '',
   reducers: {
     filterContact(state, action) {
-      // console.log(filterContact(state));
-      // console.log(filterContact(action));
-      return (state.value = action.payload);
+      return (state = action.payload);
     },
   },
 });

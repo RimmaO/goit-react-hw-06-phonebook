@@ -1,8 +1,8 @@
 import { toast } from 'react-hot-toast';
+import { nanoid } from 'nanoid';
 import { Button, Input, Text, Wrap } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
-import { nanoid } from 'nanoid';
 import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
@@ -12,30 +12,22 @@ const ContactForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    // const form = event.target;
-    // const newContact = {
-    //   id: nanoid(),
-    //   name: form.elements.name.value,
-    //   number: form.elements.number.value,
-    // };
-
-    // if (
-    //   contacts.find(
-    //     contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
-    //   )
-    // ) {
-    //   return toast.error(`${newContact.name} is already in contacts`);
-    // }
-
-    // dispatch(addContact(newContact));
     const form = event.target;
-    dispatch(
-      addContact({
-        id: nanoid(),
-        name: form.elements.name.value,
-        number: form.elements.number.value,
-      })
-    );
+    const newContact = {
+      id: nanoid(),
+      name: form.elements.name.value,
+      number: form.elements.number.value,
+    };
+
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+      )
+    ) {
+      return toast.error(`${newContact.name} is already in contacts`);
+    }
+
+    dispatch(addContact(newContact));
     form.reset();
   };
 
